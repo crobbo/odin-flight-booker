@@ -1,0 +1,25 @@
+
+<%= form_with(url:"/flights", method: "get") do |form| %>
+
+  <div class="form-field">
+    <%= form.label :from_airport, "Origin:" %>
+    <%= select_tag(:from_code, options_for_select(Airport.all.collect {|a| a.code }))%>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :to_airport, "Destination:" %>
+    <%= select_tag(:to_code, options_for_select(Airport.all.collect {|a| a.code }))%>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :passengers, "No. Passengers:" %>
+    <%= select_tag(:passengers, options_for_select([1, 2, 3, 4]))%>
+  </div>
+
+  <div class="form-field">
+    <%= form.date_select :flight_date %>
+  </div>
+  
+  <%= form.submit "Find flights" %>
+<% end %>
+
