@@ -1,0 +1,10 @@
+<% console %>
+
+<% Airport.all.each do |airport| %>
+  <% airport.departing_flights.each do |flight| %>
+    <p class="flight_list"><%= airport.code %> to <%= Airport.find(flight.to_airport_id).code %> on <%= flight.scheduled_for.strftime("%m/%d/%y") %> </p>
+  <% end %>
+<% end %>
+
+
+

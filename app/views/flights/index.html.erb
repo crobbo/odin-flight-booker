@@ -1,5 +1,5 @@
 <header class="navbar">
-  <h1><%= link_to 'Odin Flight Booker', root_path %></h1>
+  <h1 class="page-heading"><%= link_to 'Odin Flight Booker', root_path %></h1>
 </header>
 
 <div class="container">
@@ -12,19 +12,29 @@
   </section>
 
   <section class="search-results">
-  <h3>Results</h3>
+  <h3>Available Flights</h3>
 
   <% if @same_day_flights.nil?  %>
     <p>Search failed :( Try another search.</p>
   <% else %>
-    <% @same_day_flights.each do |flight| %>
+    <div class="available-flights">
+      <% @same_day_flights.each do |flight| %>
       <p><%= params[:from_code] %> to <%= params[:to_code] %> </p>
-      <p><%= flight.scheduled_for %></p>
+      <div class="card">
+        <p><%= flight.scheduled_for %></p>
+      </div>
     <% end %>
+    </div>
   <% end %>
   </section>
 </div>
 
 
+<footer>
+  <div class="footer-left-column">
+    <span>Test the flight booking app. <%= link_to 'Click here ', '/flight_list' %> to see all flights available for searching</span>
+  </div>
 
-<% console %>
+  <div class="footer-right-column">
+  </div>
+</footer>
