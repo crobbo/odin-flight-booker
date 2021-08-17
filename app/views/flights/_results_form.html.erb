@@ -1,0 +1,30 @@
+  
+  
+  <%= form_with() do |form| %> 
+  
+      <% if @same_day_flights.nil?  %>
+        <p>Search failed :( Try another search.</p>
+
+      <% else %>
+        
+        <div class="available-flights">
+          <% @same_day_flights.each do |flight| %>
+            <p><%= params[:from_code] %> to <%= params[:to_code] %> </p>
+
+            <%= radio_button_tag(:result, "flight") %>
+            <div class="card">
+              <p><%= flight.scheduled_for %></p>          
+            </div>       
+          <% end %>
+        </div>
+      
+      <% end %>
+
+      <%= hidden_field_tag(:passengers, params[:passengers]) %>
+
+      <% console %>
+
+      <%= form.submit 'Book Flight' %>
+  
+  <% end %>  
+  

@@ -14,18 +14,9 @@
   <section class="search-results">
   <h3>Available Flights</h3>
 
-  <% if @same_day_flights.nil?  %>
-    <p>Search failed :( Try another search.</p>
-  <% else %>
-    <div class="available-flights">
-      <% @same_day_flights.each do |flight| %>
-      <p><%= params[:from_code] %> to <%= params[:to_code] %> </p>
-      <div class="card">
-        <p><%= flight.scheduled_for %></p>
-      </div>
-    <% end %>
-    </div>
-  <% end %>
+  <%= render 'flights/results_form' %>
+
+  
   </section>
 </div>
 
