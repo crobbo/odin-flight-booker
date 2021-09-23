@@ -1,31 +1,43 @@
-<header class="navbar">
-  <h1 class="page-heading"><%= link_to 'Odin Flight Booker', root_path %></h1>
-</header>
-
-<div class="container">
-  <section class="search-form">
-  <h3>Find flights</h3>
-  <div class="form">
-    <%= render 'flights/search_form' %>
-  </div>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   
-  </section>
-
-  <section class="search-results">
-  <h3>Available Flights</h3>
-
-  <%= render 'flights/results_form' %>
-
+  <%= render 'flights/header' %>
   
-  </section>
-</div>
+  
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
+
+        <div class="container">
+        <section class="search-form">
+          <h3>Find flights</h3>
+          <div class="form">
+            <%= render 'flights/search_form' %>
+          </div>
+          
+          </section>
+
+          <section class="search-results">
+          <h3>Available Flights</h3>
+
+            <%= render 'flights/results_form' %>            
+        </section>
+      </div> 
 
 
-<footer>
-  <div class="footer-left-column">
-    <span>Test the flight booking app. <%= link_to 'Click here ', '/flight_list' %> to see all flights available for searching</span>
-  </div>
 
-  <div class="footer-right-column">
+    </div>
+
+    
+  </main>
+
+  <footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">Odin Flight booker</div>
+    <ul class="mdl-mini-footer__link-list">
+      <li><a href="#"></a></li>
+      <li><a href="#"></a></li>
+    </ul>
   </div>
 </footer>
+
+</div>
+

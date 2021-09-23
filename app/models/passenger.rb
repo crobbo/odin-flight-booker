@@ -1,4 +1,4 @@
 class Passenger < ApplicationRecord
-  has_one :booking, foreign_key: "booking_id"
-  has_one :flight, through: :booking, foreign_key: "id"
+  belongs_to :booking
+  has_one :flight, through: :booking, source: :flight, foreign_key: :flight_id
 end

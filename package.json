@@ -2,6 +2,8 @@
   "name": "odin-flight-booker",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material/textfield": "^12.0.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",

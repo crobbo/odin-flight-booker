@@ -1,0 +1,34 @@
+
+<%= render 'flights/header' %>
+
+
+
+<div class="passenger-form-container">
+
+  <%= form_for @booking do |f| %>
+  
+  <h3>Add Passenger Details</h3>
+  <div class="booking-info">
+<p class="booking-details"> 
+    ✈️ Flying from <%= @from_airport %> to <%= @to_airport %> on <%= @date %> 🎉
+</p>  
+  </div>
+  <%= f.hidden_field :flight_id, value: params[:flight_id] %>
+          <%= f.fields_for :passengers do |p| %>
+          <li>
+            <%= p.text_field :name, placeholder:"name", class:"confirm-booking-form-field" %>
+            <%= p.text_field :email, placeholder:"email", class:"confirm-booking-form-field" %>          
+          </li>
+
+          <% end %>
+
+          <%= f.submit 'Confirm Booking', class:"mdl-button mdl-js-button mdl-button--raised mdl-button--accent confirm-flight-btn" %>
+    </div>
+
+  <% end %>
+
+</div>
+
+
+<% console %>
+

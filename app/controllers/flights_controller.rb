@@ -23,7 +23,6 @@ class FlightsController < ApplicationController
       flight[:scheduled_for].strftime("%Y/%m/%d")
       @same_day_flights << flight
     end
-
   end
 
   # def flight_params
